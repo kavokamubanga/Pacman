@@ -4,10 +4,12 @@
 #include <string>
 #include <fstream>
 
-//Парсятся int
+//ГЏГ Г°Г±ГїГІГ±Гї int
 std::vector<std::vector<int>> parse_csv(std::string csv_file)
 {
 	std::ifstream fin(csv_file);
+	if (fin.fail())
+		std::cout << "NO FILE!";
 
 	std::vector<std::vector<int>> parsed;
 	std::pair<std::vector<std::vector<int>>, int> vec_n_score;
@@ -17,7 +19,7 @@ std::vector<std::vector<int>> parse_csv(std::string csv_file)
 		std::string line;
 		std::getline(fin, line);
 
-		// Убираем пробелы
+		// Г“ГЎГЁГ°Г ГҐГ¬ ГЇГ°Г®ГЎГҐГ«Г»
 
 		for (int i = 0; i < line.size(); ++i)
 		{
