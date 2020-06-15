@@ -7,24 +7,23 @@ TextView::TextView(PacManGame* instance) : instance(instance) {}
 
 void TextView::draw_border()
 {
-	// Верхняя и нижняя граница
+	
 	for (int i = 0; i < Map::getSizeX(); ++i)
 	{
 		this->instance->set_pixel({ i, Map::getSizeY() + 2 }, char(196));
 		this->instance->set_pixel({ i, Map::getSizeY() + 4 }, char(196));
 	}
 
-	//Левая граница
+	
 	this->instance->set_pixel({ 0, Map::getSizeY() + 2 }, char(218));
 	this->instance->set_pixel({ 0, Map::getSizeY() + 3 }, char(179));
 	this->instance->set_pixel({ 0, Map::getSizeY() + 4 }, char(192));
 
-	//Правая граница
+	
 	this->instance->set_pixel({ Map::getSizeX() - 1, Map::getSizeY() + 2 }, char(191));
 	this->instance->set_pixel({ Map::getSizeX() - 1, Map::getSizeY() + 3 }, char(179));
 	this->instance->set_pixel({ Map::getSizeX() - 1, Map::getSizeY() + 4 }, char(217));
 
-	//Центральная граница
 	this->instance->set_pixel({ Map::getSizeX() / 2, Map::getSizeY() + 2 }, char(194));
 	this->instance->set_pixel({ Map::getSizeX() / 2, Map::getSizeY() + 3 }, char(179));
 	this->instance->set_pixel({ Map::getSizeX() / 2, Map::getSizeY() + 4 }, char(193));
